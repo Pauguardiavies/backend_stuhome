@@ -20,5 +20,5 @@ public class StuhomeJDBC {
 				}catch(Exception e){
 					e.printStackTrace();
 			}
-		}	
+		}
 }
