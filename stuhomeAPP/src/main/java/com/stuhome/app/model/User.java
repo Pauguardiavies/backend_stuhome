@@ -14,7 +14,6 @@ public class User implements Serializable {
 	private Long id;
 	
 	@Column(length = 50)
-	private String username;
 	private String password;
 	private String name;
 	private String apellido;
@@ -32,9 +31,8 @@ public class User implements Serializable {
 	public User() {
 	}
 	
-	public User(String username,String password,String name, String apellido, String email, String description, String studies, String direccion) {
-		this.username = username;
-		this.password = password;
+	public User(String password,String name, String apellido, String email, String description, String studies, String direccion) {
+		this.password = password;	
 		this.name = name;
 		this.apellido = apellido;
 		this.email = email;
@@ -87,14 +85,6 @@ public class User implements Serializable {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 	public String getPassword() {
 		return password;
 	}
@@ -104,7 +94,8 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", password=" + password + ", name=" + name + ", apellido=" + apellido + ", email="
+				+ email + ", description=" + description + ", studies=" + studies + ", direccion=" + direccion + "]";
 	}
 	
 }

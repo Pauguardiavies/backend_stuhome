@@ -9,8 +9,9 @@ import com.stuhome.app.model.User;
 
 @Repository
 public interface UserDao extends JpaRepository<User, Long>{
-
-	List<User> findByUsernameAndPassword(String username, String password);
-	List<User> findByUsername(String username);
+	
+	List<User> findByEmailAndPassword(String email, String password);
+	List<User> findByEmail(String email);
+	
 	
 }

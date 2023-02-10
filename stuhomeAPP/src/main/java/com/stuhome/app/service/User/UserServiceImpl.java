@@ -36,18 +36,6 @@ public class UserServiceImpl implements UserService{
 	public Optional<User> findById(Long id) {
 		return userDao.findById(id);
 	}
-	
-	@Override
-	@Transactional(readOnly = true)
-	public List<User> findByUsernameAndPassword(String username,String password) {
-		return userDao.findByUsernameAndPassword(username,password);
-	}
-	
-	@Override
-	@Transactional(readOnly = true)
-	public List<User> findByUsername(String username) {
-		return userDao.findByUsername(username);
-	}
 
 	@Override
 	@Transactional
@@ -59,6 +47,18 @@ public class UserServiceImpl implements UserService{
 	@Transactional
 	public void deleteById(Long id) {
 		userDao.deleteById(id);
+	}
+
+	@Override
+	public List<User> findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return userDao.findByEmail(email);
+	}
+
+	@Override
+	public List<User> findByEmailAndPassword(String email, String password) {
+		// TODO Auto-generated method stub
+		return userDao.findByEmailAndPassword(email, password);
 	}
 
 }
